@@ -17,7 +17,7 @@ The UI and flow are inspired by CNAPP dashboards.
 [Implemented Dashboard](./Screenshot3.png)
 
 ### 3. Add Widget Modal
-![Add Widget Modal](./screenshots/Screenshot4.png)
+![Add Widget Modal](./Screenshot4.png)
 
 ---
 
