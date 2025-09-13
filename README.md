@@ -22,7 +22,7 @@ The UI and flow are inspired by CNAPP dashboards.
 ---
 
 ## 📂 Project Structure
-
+---
 src/
 ├── components/
 │ ├── Dashboard.jsx # Main dashboard with search & time filter
