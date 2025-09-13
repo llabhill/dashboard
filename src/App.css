@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.widgets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.widget {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  position: relative;
+  width: 150px;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background: transparent;
+  color: red;
+  cursor: pointer;
+}
+
+.add-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.add-widget-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.searchbar {
+  margin-bottom: 20px;
+}
+
+.search-results {
+  background: white;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+  max-width: 300px;
+}
