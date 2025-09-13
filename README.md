@@ -10,11 +10,11 @@ The UI and flow are inspired by CNAPP dashboards.
 ## 📸 Screenshots
 
 ### 1. Reference Design
-![Reference Screenshot](./screenshots/Screenshot1.png)
+![Reference Screenshot](./Screenshot1.png)
 
 ### 2. Implemented Dashboard
-![Implemented Dashboard](./screenshots/Screenshot2.png)
-[Implemented Dashboard](./screenshots/Screenshot3.png)
+![Implemented Dashboard](./Screenshot2.png)
+[Implemented Dashboard](./Screenshot3.png)
 
 ### 3. Add Widget Modal
 ![Add Widget Modal](./screenshots/Screenshot4.png)
