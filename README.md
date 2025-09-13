@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# Dynamic Dashboard (CNAPP Style)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a **React + Redux Toolkit + Ant Design + Recharts** implementation of a dynamic dashboard UI.  
+It allows users to **create categories, add/remove widgets, filter data, and view charts dynamically**.  
 
-## Available Scripts
+The UI and flow are inspired by CNAPP dashboards.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📸 Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Reference Design
+![Reference Screenshot](./screenshots/Screenshot1.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Implemented Dashboard
+![Implemented Dashboard](./screenshots/Screenshot2.png)
+[Implemented Dashboard](./screenshots/Screenshot3.png)
 
-### `npm test`
+### 3. Add Widget Modal
+![Add Widget Modal](./screenshots/Screenshot4.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+src/
+├── components/
+│ ├── Dashboard.jsx # Main dashboard with search & time filter
+│ ├── Category.jsx # Renders a category and its widgets
+│ ├── Widget.jsx # Handles widget rendering (Donut/Bar/Empty)
+│ ├── AddCategoryModal.jsx # Modal for adding new categories
+│ └── AddWidgetModal.jsx # Modal for adding new widgets
+├── store/
+│ ├── dashboardSlice.js # Redux slice for categories, widgets, timeRange
+│ └── store.js # Store configuration
+├── App.jsx # Root component with Layout & Category modal
+├── main.jsx # React entry point with Redux provider
+└── index.css # Global and custom styles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Categories**
+  - Add and remove categories dynamically.
+- **Widgets**
+  - Add and remove widgets inside categories.
+  - Supports:
+    - **Donut Chart**
+    - **Bar Chart**
+    - **Empty Widget** (no data).
+- **Dynamic Data**
+  - Enter comma-separated numbers for data and labels when creating a widget.
+  - Example:
+    - Data: `10,20,30`
+    - Labels: `Critical,High,Low`
+- **Charts**
+  - Donut chart with legends (labels + values).
+  - Bar chart with axis and tooltips.
+  - Empty widget with placeholder message.
+- **Filters**
+  - Search bar to filter widgets by title.
+  - Time range selector:
+    - Last 2 Days
+    - Last 10 Days
+    - Last 30 Days
+  - Widget values scale dynamically with the selected time range.
+- **UI**
+  - Clean, modern design with **Ant Design**.
+  - Each category appears in a rounded, shadowed section.
+  - Widget placeholders (`+ Add Widget`) with dashed borders.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ⚙️ How It Works
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **State Management**  
+   - Managed with **Redux Toolkit**.  
+   - `dashboardSlice.js` handles:
+     - Categories
+     - Widgets
+     - Time range state  
 
-## Learn More
+2. **Widgets**  
+   - A widget has:
+     - `title` → Widget name
+     - `type` → `donut` | `bar` | `empty`
+     - `data` → Array of numbers
+     - `labels` → Array of strings  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Chart Rendering**  
+   - Donut & bar charts are built with **Recharts**.  
+   - Legends for donut charts are dynamically generated.  
+   - Bar charts automatically bind labels to X-axis.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Dynamic Behavior**
+   - Changing the **time range** scales widget data.  
+   - Search bar filters widget titles in real time.  
+   - Add widget modal allows quick input of data & labels.  
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🛠️ Tech Stack
 
-### Analyzing the Bundle Size
+- **React 18**
+- **Redux Toolkit**
+- **React Redux**
+- **Ant Design**
+- **Recharts**
+- **UUID** (unique IDs for categories & widgets)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🖥️ Steps to Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/Dashboard.git
+cd Dashboard
+2. Install Dependencies
+npm install
 
-### Advanced Configuration
+3. Start the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+For Create React App:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm start
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Visit: http://localhost:3000
+
+📖 Example Workflow
+
+Add a new category → Creates a new section.
+
+Add a widget → Choose type (Donut/Bar/Empty), provide data + labels.
+
+Switch time range → Widget values update dynamically.
+
+Use search → Quickly filter widgets by name.
+
+Remove → Delete any widget or category instantly.
