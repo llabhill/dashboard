@@ -23,6 +23,7 @@ The UI and flow are inspired by CNAPP dashboards.
 
 ## 📂 Project Structure
 ---
+```
 src/
 ├── components/
 │ ├── Dashboard.jsx # Main dashboard with search & time filter
@@ -36,7 +37,6 @@ src/
 ├── App.jsx # Root component with Layout & Category modal
 ├── main.jsx # React entry point with Redux provider
 └── index.css # Global and custom styles
-
 
 ---
 
@@ -70,7 +70,7 @@ src/
   - Clean, modern design with **Ant Design**.
   - Each category appears in a rounded, shadowed section.
   - Widget placeholders (`+ Add Widget`) with dashed borders.
-
+```
 ---
 
 ## ⚙️ How It Works
